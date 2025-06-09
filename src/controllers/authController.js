@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt';
 import { createToken, getHashedPassword, readJsonFile, sendResponse, writeData } from "../utils/helper.js";
-import authSchema from '../utils/validation_schema.js';
 
 // Function to register the new user
 export const handleRegister = async (req, res) => {
@@ -14,8 +13,6 @@ export const handleRegister = async (req, res) => {
         }
 
         //(TODO: Add schema validation using Joi)
-        const result = await authSchema.validateAsync(req.body);
-        console.log("result: ",result);
 
         // Read existing user data from JSON file
         const data = await readJsonFile('registeredUser.json');
@@ -42,7 +39,6 @@ export const handleRegister = async (req, res) => {
         return sendResponse(res, "User Registered Successfully", true, 200);
     } catch (error) {
         console.log("register error: ", error)
-        if()
         sendResponse(res, "Server Error", false, 500);
     }
 }
