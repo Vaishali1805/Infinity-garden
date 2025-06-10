@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt';
 import { createToken, getHashedPassword, readJsonFile, sendResponse, writeData } from "../utils/helper.js";
+import authSchema from '../utils/validation.js';
 
 // Function to register the new user
 export const handleRegister = async (req, res) => {
@@ -13,23 +14,25 @@ export const handleRegister = async (req, res) => {
         }
 
         //(TODO: Add schema validation using Joi)
+        const result = await authSchema.validateAsync(req.body);
+        console.log("result: ", result);
 
         // Read existing user data from JSON file
         const data = await readJsonFile('registeredUser.json');
         //check if user already exist
-        if (Object.values(data).some(user => user.email === email.toLowerCase())) {
+        if (Object.values(data).some(user => user.email === result.email.toLowerCase())) {
             return sendResponse(res, "User Already Exists", false, 409);
         }
 
-        const hashedPassword = await getHashedPassword(password);
+        const hashedPassword = await getHashedPassword(result.password);
         if (!hashedPassword) return sendResponse(res, "Password hashing failed. Please try again.", false, 400);
 
         // Create new user object with a unique ID
         const newUser = {
             id: uuidv4(),
-            email : email.toLowerCase(),
+            email: result.email.toLowerCase(),
             password: hashedPassword,
-            ...(gardenName && { gardenName })
+            ...(result.gardenName && { gardenName })
         };
 
         // Add new user to the data object with ID as key
@@ -39,6 +42,8 @@ export const handleRegister = async (req, res) => {
         return sendResponse(res, "User Registered Successfully", true, 200);
     } catch (error) {
         console.log("register error: ", error)
+        // Joi Validation Error Handling
+        if (error.isJoi)    return sendResponse(res, error.details[0].message, false, 400);
         sendResponse(res, "Server Error", false, 500);
     }
 }

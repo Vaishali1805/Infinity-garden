@@ -40,5 +40,35 @@
     "email": "emailstring@abc.com",
     "password": "$2b$10$ep17tmHfKsCf82AnI9rSpO05CHegUnCU/pCzQFCPFSa6eu1UuXxlK",
     "gardenName": "ABC Garden"
+  },
+  "f2cd5ab0-e7c4-44ee-b78c-b75d5d71fce4": {
+    "id": "f2cd5ab0-e7c4-44ee-b78c-b75d5d71fce4",
+    "email": "emailstring@abcm",
+    "password": "$2b$10$VBgJmwNmvqXc/lC5aDpgb.IEiB5AmGaEDXqPyKFvFLMst2Do5iqei",
+    "gardenName": "ABC Garden"
+  },
+  "f16c481d-a4d3-4575-b0c5-d5b47503a87e": {
+    "id": "f16c481d-a4d3-4575-b0c5-d5b47503a87e",
+    "email": "emailsring@abc.com",
+    "password": "$2b$10$f8buUkM.XEqsKMQ0lk6E5u24ZfbbYMoX3nAMQoraoYd7rNbPXMN5e",
+    "gardenName": "djhfj"
+  },
+  "ed28d0be-f119-42c5-ab11-518d813ce9da": {
+    "id": "ed28d0be-f119-42c5-ab11-518d813ce9da",
+    "email": "esring@abc.com",
+    "password": "$2b$10$f.QF03GQjEl0SHOdLw1sZ.Ui31ihrJfN2/N2utS1MLUbzsOI939zW",
+    "gardenName": "djhfj"
+  },
+  "a5ff4f5a-4321-44fe-834d-6e6039a15aba": {
+    "id": "a5ff4f5a-4321-44fe-834d-6e6039a15aba",
+    "email": "abc@abc.com",
+    "password": "$2b$10$FH5.7OPlnlC9CMl7D3WjzuKx1iAU5Hf.448V/fzD9zxVRiWcAXm4y",
+    "gardenName": "djhfj"
+  },
+  "3fffd121-fc90-46eb-98e7-cb13cf365111": {
+    "id": "3fffd121-fc90-46eb-98e7-cb13cf365111",
+    "email": "abc2@abc.com",
+    "password": "$2b$10$bS2WJ1fQ9//2LXHqzyDL0.jIDfL/Uz0snBNvK3kWotY24rHP3AeQW",
+    "gardenName": "ABC Garden"
   }
 }
