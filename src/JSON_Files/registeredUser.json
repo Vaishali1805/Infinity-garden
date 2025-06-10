@@ -62,7 +62,7 @@
   "a5ff4f5a-4321-44fe-834d-6e6039a15aba": {
     "id": "a5ff4f5a-4321-44fe-834d-6e6039a15aba",
     "email": "abc@abc.com",
-    "password": "$2b$10$FH5.7OPlnlC9CMl7D3WjzuKx1iAU5Hf.448V/fzD9zxVRiWcAXm4y",
+    "password": "$2b$10$NO0CPGIVOzCmql7SRYtZP./5uI4cjBiWRCYyFGiUXzYiHwDi4W5vi",
     "gardenName": "djhfj"
   },
   "3fffd121-fc90-46eb-98e7-cb13cf365111": {
@@ -70,5 +70,35 @@
     "email": "abc2@abc.com",
     "password": "$2b$10$bS2WJ1fQ9//2LXHqzyDL0.jIDfL/Uz0snBNvK3kWotY24rHP3AeQW",
     "gardenName": "ABC Garden"
+  },
+  "4874819d-be9d-484f-b0f9-ff6bbc23f296": {
+    "id": "4874819d-be9d-484f-b0f9-ff6bbc23f296",
+    "email": "krrishdhamija001@gmail.com",
+    "password": "$2b$10$yGyFZduw3FyQxSX6EjauvOsK9Czd9GGQWDUZf27lMzoDRuOzywMpW",
+    "gardenName": "asdasdasd"
+  },
+  "de931f66-aee6-46a7-8447-9cf2b20a5179": {
+    "id": "de931f66-aee6-46a7-8447-9cf2b20a5179",
+    "email": "shivanshudhamija02@gmail.com",
+    "password": "$2b$10$UiOousqUTnwyjjBxAUhx6usTVclWkvhEFcaO.Yku/HwpKkjJZf7U6",
+    "gardenName": "Asdfgh01@"
+  },
+  "6c63153b-6654-4172-83aa-7710d52b26a9": {
+    "id": "6c63153b-6654-4172-83aa-7710d52b26a9",
+    "email": "shivanshudhamija03@gmail.com",
+    "password": "$2b$10$FS6rHSrJkIDgB39qMuQN3.J6gNTCyYtTbrywMtVUWb3jLg3OVvJXC",
+    "gardenName": "Asdfgh01@"
+  },
+  "60a579d7-49ab-4bef-afc7-d843b149deb1": {
+    "id": "60a579d7-49ab-4bef-afc7-d843b149deb1",
+    "email": "shivanshudhamija04@gmail.com",
+    "password": "$2b$10$C22sKFvlPxBLaszt/9SrcelU56vOelgFw8T67Jl43IS8Yna4.AQPO",
+    "gardenName": "password"
+  },
+  "2237a0ca-d913-4297-b8f5-10e1b60aa290": {
+    "id": "2237a0ca-d913-4297-b8f5-10e1b60aa290",
+    "email": "1@gmail.com",
+    "password": "$2b$10$qYYcSnOu1INws0QNR2dI3.gXYZMRa9gsiiR7UoDBH6wHDnxXvTh1e",
+    "gardenName": "Aakash@1234"
   }
 }
