@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import { createToken, getHashedPassword, readJsonFile, sendResponse, writeData } from "../utils/helper.js";
 import authSchema from '../utils/validation.js';
 
-// Function to register the new user
+// Register Controller
 export const handleRegister = async (req, res) => {
     try {
         if (!req.body) return sendResponse(res, "No data received", false, 400);
@@ -13,7 +13,7 @@ export const handleRegister = async (req, res) => {
             return sendResponse(res, "Required fields are missing", false, 400);
         }
 
-        //(TODO: Add schema validation using Joi)
+        // Schema validation using Joi
         const result = await authSchema.validateAsync(req.body);
         console.log("result: ", result);
 
@@ -48,26 +48,32 @@ export const handleRegister = async (req, res) => {
     }
 }
 
+// Login Controller
 export const handleLogin = async (req, res) => {
     try {
         if (!req.body) return sendResponse(res, "No data received", false, 400);
         let { email, password } = req.body;
         if (![email, password].every(Boolean)) return sendResponse(res, "Data not found", false, 400);
 
+        // Read existing user data from JSON file
         const data = await readJsonFile('registeredUser.json');
+        // Find user by email
         const user = Object.values(data).find(user => user.email === email);
         if (!user) return sendResponse(res, "User not exist signup first", false, 400);
 
+        // Compare given password with hashed password
         const match = await bcrypt.compare(password, user.password);
         let token;
         if (match) {
-            const payload = {
-                id: user.id
-            }
+            // If password matches, generate JWT token
+            const payload = { id: user.id };
             token = await createToken(payload);
+
+            // Exclude password from response data
             const { password, ...data } = user;
             return sendResponse(res, "Login Successfull", true, 200, data, token);
         }
+        // Password does not match
         sendResponse(res, "Incorrect Password", false, 400);
 
     } catch (error) {
