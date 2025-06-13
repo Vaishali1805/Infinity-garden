@@ -1,17 +1,17 @@
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt';
 import { createToken, getHashedPassword, readJsonFile, sendResponse, writeData } from "../utils/helper.js";
-import { authSchema, loginSchema } from '../utils/validation.js';
+import { authSchema, changePasswordSchema } from '../utils/validation.js';
 import sendEmail from '../utils/mailAuth.js';
 import { getOtp, setOtp } from '../utils/otpStore.js';
 
 // Register Controller
 export const handleRegister = async (req, res) => {
     try {
-        const { email, password, confirmPassword, gardenName } = req.body;
-        // if (![email, password, confirmPassword].every(Boolean)) {
-        //     return sendResponse(res, "Required fields are missing", false, 400);
-        // }
+        const { email, password, confirmPassword, gardenName } = req.body || {};
+        if (![email, password, confirmPassword].every(Boolean)) {
+            return sendResponse(res, "Required fields are missing", false, 400);
+        }
 
         // Schema validation using Joi
         const result = await authSchema.validateAsync(req.body);
@@ -56,7 +56,7 @@ export const handleLogin = async (req, res) => {
         // Read existing user data from JSON file
         const data = await readJsonFile('registeredUser.json');
         // Find user by email
-        const user = Object.values(data).find(user => user.email === email);
+        const user = Object.values(data).find(user => user.email === email.toLowerCase());
         if (!user) return sendResponse(res, "User not exist signup first", false, 400);
 
         // Compare given password with hashed password
@@ -124,12 +124,11 @@ export const handleVerifyOtp = async (req, res) => {
 // Change Password controller
 export const handleChangePassword = async (req, res) => {
     try {
-        const { newPassword, confirmPassword, email } = req.body || {};
-        if (![newPassword,confirmPassword, email].every(Boolean)) return sendResponse(res, "Password and email are required", false, 400);
+        const { password, email } = req.body || {};
+        if (![password, email].every(Boolean)) return sendResponse(res, "Password and email are required", false, 400);
 
         // Schema validation using Joi
-        const result = await loginSchema.validateAsync(req.body);
-        console.log("result: ",result);
+        const result = await changePasswordSchema.validateAsync(req.body);
 
         //Read user data
         const data = await readJsonFile('registeredUser.json');
@@ -138,11 +137,17 @@ export const handleChangePassword = async (req, res) => {
         if (!userId) {
             return sendResponse(res, "User not found", false, 404);
         }
+        
+        const oldHashedPassword = data[userId].password;
+        const isSamePassword = await bcrypt.compare(password, oldHashedPassword);
+        if (isSamePassword) {
+            return sendResponse(res, "New password cannot be same as the old password", false, 400);
+        }
 
         //Hash new password
-        const hashedPassword = await getHashedPassword(newPassword);
+        const hashedPassword = await getHashedPassword(password);
         if(!hashedPassword) return sendResponse(res,"Password hashing failed",false,500);
-
+        
         //Update password
         data[userId].password = hashedPassword;
         await writeData('registeredUser.json',data);

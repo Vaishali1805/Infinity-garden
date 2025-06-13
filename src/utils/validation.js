@@ -24,17 +24,17 @@ const emailRule = Joi.string()                 // Validate email format
             'string.pattern.base': 'Invalid email format',
             'string.empty': 'Email is required',
         })
+
 // Joi schema for validating user registration inputs
 export const authSchema = Joi.object({
     email: emailRule,
     password: passwordRule,
     confirmPassword: confirmPasswordRule,
-    gardenName: Joi.string().allow('').optional(),          // Optional garden name field
+    gardenName: Joi.string().allow('', null).optional(),          // Optional garden name field
 });
 
 // Joi schema for validating password and confirm password
-
-export const loginSchema = Joi.object({
-    newPassword: passwordRule,
-    confirmPassword: confirmPasswordRule,
+export const changePasswordSchema = Joi.object({
+    email: emailRule,
+    password: passwordRule,
 });

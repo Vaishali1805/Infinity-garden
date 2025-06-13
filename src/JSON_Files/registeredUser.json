@@ -20,13 +20,13 @@
   "ef6a5b71-c011-4340-9e9d-48601deb7afb": {
     "id": "ef6a5b71-c011-4340-9e9d-48601deb7afb",
     "email": "aakashshukla326@gmail.com",
-    "password": "$2b$10$zrIdRWSXcdL0SWAxHK87v.BJW1l0oLwQWoKDQ067loc1HbZJa2QXu",
+    "password": "$2b$10$Roynlnha57UV0KI2x9MyQ.Litn5zMwhZ.gqrnV4zCgkVwhLjVsQzG",
     "gardenName": "Aakash"
   },
   "ae28505b-1361-4193-8d19-55dca7d3126d": {
     "id": "ae28505b-1361-4193-8d19-55dca7d3126d",
     "email": "shivanshudhamija01@gmail.com",
-    "password": "$2b$10$lPKxlOqfm0ONUGuZU.GFaOWrMW04Isc4HDYjnYdwkhR4/suSgivm6",
+    "password": "$2b$10$RTbPF4YkldSxGDYhKqQAvuZVSF.6W8VcQvvpbB0.a.7i34QlidWDG",
     "gardenName": "asdcDS01#"
   },
   "052095c4-37b8-478d-ba42-bc08dd517397": {
@@ -62,13 +62,13 @@
   "a5ff4f5a-4321-44fe-834d-6e6039a15aba": {
     "id": "a5ff4f5a-4321-44fe-834d-6e6039a15aba",
     "email": "abc@abc.com",
-    "password": "$2b$10$NO0CPGIVOzCmql7SRYtZP./5uI4cjBiWRCYyFGiUXzYiHwDi4W5vi",
+    "password": "$2b$10$xJe3UDuIufiIowe9HgeK4OBDXChNPbLj5imKcm5neE.dXz4s0aqR.",
     "gardenName": "djhfj"
   },
   "3fffd121-fc90-46eb-98e7-cb13cf365111": {
     "id": "3fffd121-fc90-46eb-98e7-cb13cf365111",
     "email": "abc2@abc.com",
-    "password": "$2b$10$bS2WJ1fQ9//2LXHqzyDL0.jIDfL/Uz0snBNvK3kWotY24rHP3AeQW",
+    "password": "$2b$10$UVge6IHELrwjqY2uoZlZeutA6xbw5fkwSVdZMcZoQQzYZlWhjKa3K",
     "gardenName": "ABC Garden"
   },
   "4874819d-be9d-484f-b0f9-ff6bbc23f296": {
@@ -100,5 +100,29 @@
     "email": "1@gmail.com",
     "password": "$2b$10$qYYcSnOu1INws0QNR2dI3.gXYZMRa9gsiiR7UoDBH6wHDnxXvTh1e",
     "gardenName": "Aakash@1234"
+  },
+  "4dcb27be-4a86-4330-baa8-5a74e1b6fb4c": {
+    "id": "4dcb27be-4a86-4330-baa8-5a74e1b6fb4c",
+    "email": "ricky01@gmail.com",
+    "password": "$2b$10$ZFTA0AvHDrfwfAPrmpiRCeA6mw3JbMM8c1Xrs75qzmlhxZ.JjZdVK",
+    "gardenName": "Shivanshu"
+  },
+  "cf64ceca-8c2a-4e50-b591-4b7c60285e25": {
+    "id": "cf64ceca-8c2a-4e50-b591-4b7c60285e25",
+    "email": "shivanshud.vt@gmail.com",
+    "password": "$2b$10$eAqLN1Ax7rriqXF96q.kGeijIVIwhqIUArNFuB.RrUlcCZRP.rgLS",
+    "gardenName": "Maalik"
+  },
+  "a240071f-4cc9-4f13-89b2-dcb8bc1e9900": {
+    "id": "a240071f-4cc9-4f13-89b2-dcb8bc1e9900",
+    "email": "deepaknaini@gmail.com",
+    "password": "$2b$10$6D1IIMvbMxhQRanpPlaTxu4fK3AKX9tosIxNdtCJIVyNYIodjuZAu",
+    "gardenName": "wda"
+  },
+  "565325d1-96c2-4cf4-b8bc-4225bf6fb170": {
+    "id": "565325d1-96c2-4cf4-b8bc-4225bf6fb170",
+    "email": "bhumikaneogi1234@gmail.com",
+    "password": "$2b$10$dqvTNErHE27/WcKoWnrE2ehNwceW9wCWIvMuB0x.wIZKGgqMxgq/O",
+    "gardenName": "Didu"
   }
 }
