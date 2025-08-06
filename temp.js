@@ -105,3 +105,28 @@ export {
   passwordRule, // optional if needed elsewhere
   confirmPasswordRule // optional
 };
+
+//old code
+//For swagger
+import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
+
+const options = {
+  definition: {
+    openapi : '3.0.0',
+    info : {
+      title: 'Backend Authentication',
+      version: '1.0.0'
+    },
+    servers : [
+      {
+        url : 'http://localhost:5000',
+      }
+    ]
+  },
+  apis: ['./route/authRoute.js','./route/gardenRoute.js']
+}
+
+const swaggerSpec = swaggerJSDoc(options);
+app.use('api-docs',swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+

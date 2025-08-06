@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generateDoc": "node src/swagger.js"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,11 @@
     "nodemailer": "^7.0.3",
     "nodemon": "^3.1.10",
     "path": "^0.12.7",
+    "swagger-jsdoc": "^6.0.0",
+    "swagger-ui-express": "^5.0.1",
     "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "swagger-autogen": "^2.23.7"
   }
 }

@@ -7,7 +7,7 @@ import { getOtp, setOtp } from '../utils/otpStore.js';
 
 // Register Controller
 export const handleRegister = async (req, res) => {
-    try {
+    try {        
         const { email, password, confirmPassword, gardenName } = req.body || {};
         if (![email, password, confirmPassword].every(Boolean)) {
             return sendResponse(res, "Required fields are missing", false, 400);
@@ -56,7 +56,7 @@ export const handleLogin = async (req, res) => {
         // Read existing user data from JSON file
         const data = await readJsonFile('registeredUser.json');
         // Find user by email
-        const user = Object.values(data).find(user => user.email === email.toLowerCase());
+        const user = Object.values(data).find(user => user.email === email.toLowerCase()); 
         if (!user) return sendResponse(res, "User not exist signup first", false, 400);
 
         // Compare given password with hashed password
@@ -158,4 +158,9 @@ export const handleChangePassword = async (req, res) => {
         if (error.isJoi) return sendResponse(res, error.details[0].message, false, 400);
         sendResponse(res, "Unable to change password", false, 500);
     }
+}
+
+export const handleLogout = async (req, res) => {
+    console.log("in handlelogout");
+
 }

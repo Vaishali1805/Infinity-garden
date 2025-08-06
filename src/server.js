@@ -6,6 +6,12 @@ configDotenv.config();
 //Middlewares
 app.use(express.json());
 
+//For Swagger
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './swagger-output.json' with { type: "json" };
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 //Routes
 import authRoute from './route/authRoute.js';
 import gardenRoute from './route/gardenRoute.js';
